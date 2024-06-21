@@ -18,7 +18,7 @@ namespace FlipCoin.ViewModels
         [ObservableProperty]
         private string _caraCoroa = "Cara ou Coroa?";
         [ObservableProperty]
-        private string _imageCoin;
+        private string _imageCoin = "https://www2.sorteador.com.br/_imgs/caracoroa/cara.jpg";
 
 
         public ICommand RollCommand { get; }
@@ -29,17 +29,17 @@ namespace FlipCoin.ViewModels
             coin.Flip();
             ImageCoin = $"https://www2.sorteador.com.br/_imgs/caracoroa/{coin.LadoSorteado}.jpg";
 
-            if (LadoSorteado == "cara" && LadoSelecionado == "cara")
+            if (coin.LadoSorteado == "cara" && LadoSelecionado == "cara")
             {
                 CaraCoroa = "Você Ganhou! Selecionou Cara e caiu Cara";
                 return;
             }
-            else if (LadoSorteado == "coroa" && LadoSelecionado == "coroa")
+            else if (coin.LadoSorteado == "coroa" && LadoSelecionado == "coroa")
             {
                 CaraCoroa = "Você Ganhou! Selecionou Coroa e caiu Coroa";
                 return;
             }
-            CaraCoroa = "Você Perdeu!";
+                CaraCoroa = "Você Perdeu!";
         }
         public FlipCoinViewModel()
         {

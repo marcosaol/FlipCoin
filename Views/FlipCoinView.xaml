@@ -18,7 +18,7 @@
 
             <Image 
                x:Name="CC"
-               Source="https://www2.sorteador.com.br/_imgs/caracoroa/cara.jpg" 
+               Source="{Binding ImageCoin}"
                MaximumWidthRequest="300"
                MaximumHeightRequest="300"/>
 
